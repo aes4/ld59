@@ -1,0 +1,1 @@
+draw_sprite(sbox, 0, x, y)
