@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"swirectwo",
-    "path":"sprites/swirectwo/swirectwo.yy",
+    "name":"sdoor",
+    "path":"sprites/sdoor/sdoor.yy",
   },
   "spriteMaskId":{
     "name":"sdoor",

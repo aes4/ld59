@@ -36,7 +36,7 @@ popqueue = []
 
 roomdata = {}
 
-towerrad = 3
+towerrad = 4
 treeturn = 8
 
 gamestate = "menu"
@@ -49,8 +49,8 @@ wiregain = 0
 wirestep = room_speed
 wirecounts = [8, 0, 0, 0, 0, 0]
 wireaccum = [0, 0, 0, 0, 0, 0]
-//wirerates = [64, 32, 16, 8, 4, 2] // real
-wirerates = [64, 64, 64, 64, 64, 64]  // for testing
+wirerates = [64, 32, 16, 8, 4, 2] // real
+//wirerates = [64, 64, 64, 64, 64, 64]  // for testing
 wireunlocked = [false, false, false, false, false, false]
 selwire = 0
 
@@ -248,6 +248,7 @@ function onconnecttower() {
 function onsolvebox(boxref) {
     var tier = boxref.tier
     startwiregain(tier)
+    selwire = boxref.tier
 
     boxesolved += 1
     pushpopup(boxref.word)

@@ -1,9 +1,9 @@
-movea = 0.51  // was .55
-sidea = 0.57  // was .6
+movea = 0.34  // was .55
+sidea = 0.39  // was .6
 airturn = 0.85  // was .85
 friction = 0.12
-ssc = 6
-hsc = 18
+ssc = 4.5
+hsc = 12
 cpush = 0.40
 
 hdur = 0.42 * room_speed  // was .26
