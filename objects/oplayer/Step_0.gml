@@ -136,6 +136,7 @@ if (op.intower) {
     if (place_meeting(x, y, odoorhitbox)) {
         if (mouse_check_button_pressed(mb_left)) {
             op.exittower()
+            op.playmusic(Forest)
         }
     }
 }

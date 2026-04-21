@@ -32,6 +32,7 @@ if (room == main) {
 
     if (keyboard_check_pressed(ord("Q")) && intower) {
         exittower()
+        playmusic(Forest)
     }
 }
 

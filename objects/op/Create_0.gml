@@ -1,4 +1,4 @@
-thanks = room_speed * 8
+thanksdur = room_speed * 8
 persistent = true
 
 if (instance_number(op) > 1) {
@@ -8,7 +8,7 @@ if (instance_number(op) > 1) {
 
 towerboxes = []
 introplayed = false
-introdelay = room_speed * 12
+introdelay = room_speed * 8
 workerid = noone
 debugnet = false
 debugseen = {}
@@ -126,6 +126,11 @@ function savetowerboxes() {
     }
 }
 
+function playoneshot(snd) {
+    var a = audio_play_sound(snd, 1, false)
+    audio_sound_gain(a, mastervol, 0)
+}
+
 function cleartowerinterior() {
     with (obox) instance_destroy()
     with (oboxshadow) instance_destroy()
@@ -202,6 +207,8 @@ function startintro() {
     worldy = 0
     roomready = true
     entertower()
+    stopmusic()
+    playoneshot(Signal)
 }
 
 function startwiregain(tier) {
@@ -524,6 +531,9 @@ function placewiremouse() {
 
     var gx = snapx(mouse_x)
     var gy = snapy(mouse_y)
+    if (point_distance(oplayer.x, oplayer.y, gx, gy) > gridsize * 4) {
+        return
+    }
 
     if (gx < gridoffx || gx > room_width - gridoffx) {
         return
